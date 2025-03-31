@@ -7,15 +7,17 @@
 
 /* Stilizare generală */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #2e2b27;
+    font-family: 'Poppins', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?hunting') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     text-align: center;
 }
 
 /* Stilizare Header */
 header {
-    background: rgba(26, 26, 26, 0.9);
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(5px);
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -52,13 +54,17 @@ nav ul li a:hover {
 
 /* Secțiune Hero */
 #hero {
-    background: url('https://source.unsplash.com/1600x900/?hunting,nature') no-repeat center center/cover;
+    background: rgba(0, 0, 0, 0.5);
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
 }
 
 #hero h2 {
