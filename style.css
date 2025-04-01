@@ -107,9 +107,8 @@ footer {
 /* Optimizări pentru mobil */
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll; /* Evită distorsiunile pe mobil */
-        background-size: contain; /* Asigură întreaga imagine pe ecran */
-        background-color: black; /* Fundal de rezervă */
+        background-attachment: fixed;
+        background-position: right center; /* Mută imaginea mai în dreapta pentru a se vedea omul */
     }
     
     #hero {
