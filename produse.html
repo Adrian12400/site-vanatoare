@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produse - Magazin Vânătoare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Magazin Echipamente Vânătoare</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="produse.html">Produse</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="produse">
+    <h2>Produsele Noastre</h2>
+    <div class="produs-container">
+        <!-- Primul produs -->
+        <div class="produs-card">
+            <img src="produs1.jpg" alt="Produs 1">
+            <img src="produs1-detaliu.jpg" alt="Detaliu Produs 1" class="produs-detalie">
+            <h3>Husă Tactică Impermeabilă</h3>
+            <p></p>
+            <button class="detalii-btn" onclick="showProductDetails('produs1')">Vezi Detalii</button>
+        </div>
+        
+        <!-- Al doilea produs -->
+        <div class="produs-card">
+            <img src="produs2.jpg" alt="Produs 2">
+            <img src="produs2-detaliu.jpg" alt="Detaliu Produs 2" class="produs-detalie">
+            <h3>Produs 2</h3>
+            <p>Descriere scurtă a produsului 2.</p>
+            <button class="detalii-btn" onclick="showProductDetails('produs2')">Vezi Detalii</button>
+        </div>
+
+        <!-- Poți adăuga mai multe produse aici -->
+    </div>
+</section>
+
+<!-- Pop-up detalii produs -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Husă Tactică Impermeabilă pentru Pușcă – 135 cm</h2>
+        <div class="modal-images">
+            <img src="produs1.jpg" alt="Produs 1">
+            <img src="produs1-detaliu.jpg" alt="Detaliu Produs 1">
+        </div>
+        <p><strong>Descriere:</strong> Această husă tactică este ideală pentru transportul și protecția puștii tale, oferind siguranță și durabilitate în orice condiții. Cu o lungime de 135 cm, este potrivită pentru majoritatea modelelor de puști de vânătoare sau sport.</p>
+        <ul>
+            <li><strong>Dimensiune optimă:</strong> Lungime de 135 cm, compatibilă cu diverse tipuri de puști.</li>
+            <li><strong>Material rezistent și impermeabil:</strong> Fabricată din țesătură Oxford durabilă, protejează împotriva apei, prafului și uzurii.</li>
+            <li><strong>Transport confortabil:</strong> Dotată cu mânere solide și o curea reglabilă.</li>
+            <li><strong>Protecție interioară:</strong> Căptușeală moale pentru prevenirea zgârieturilor.</li>
+            <li><strong>Compartimente suplimentare:</strong> Spațiu special pentru accesorii.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Magazin Echipamente Vânătoare</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

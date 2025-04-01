@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazin Vânătoare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Magazin Echipamente Vânătoare</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="produse.html">Produse</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="hero">
+    <h2>Găsește cele mai bune echipamente pentru vânătoare</h2>
+    <p>Din pasiune pentru natură, aventură și adrenalina care vine odată cu fiecare pas făcut în sălbăticie, am transformat hobby-ul nostru într-un loc unde fiecare vânător găsește echipamentul perfect.</p>
+    <button onclick="window.location.href='produse.html'">Vezi Produse</button>
+</section>
+
+<!-- Secțiunea Solicită Comandă -->
+<section id="solicita-comanda">
+    <h2>Solicită Comandă</h2>
+    <form id="formular-comanda">
+        <label for="produs">Produs dorit:</label>
+        <input type="text" id="produs" name="produs" required>
+
+        <label for="nume">Nume și Prenume:</label>
+        <input type="text" id="nume" name="nume" required>
+
+        <label for="telefon">Număr de telefon:</label>
+        <input type="tel" id="telefon" name="telefon" required>
+
+        <label for="adresa">Adresă de livrare:</label>
+        <textarea id="adresa" name="adresa" required></textarea>
+
+        <button type="submit">Trimite Comanda</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Magazin Echipamente Vânătoare</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
