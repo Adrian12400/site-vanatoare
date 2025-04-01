@@ -30,7 +30,16 @@
     <h2>Solicită Comandă</h2>
     <form id="formular-comanda">
         <label for="produs">Produs dorit:</label>
-        <input type="text" id="produs" name="produs" required>
+        <select id="produs" name="produs">
+            <option value="Husă Tactică Impermeabilă pentru Pușcă – 135 cm">Husă Tactică Impermeabilă pentru Pușcă – 135 cm</option>
+            <option value="Produs 2">Produs 2</option>
+            <option value="Altceva">Altceva</option>
+        </select>
+
+        <div id="alt-produs-container" style="display: none;">
+            <label for="alt-produs">Specifică alt produs:</label>
+            <input type="text" id="alt-produs" name="alt-produs" placeholder="Introduceți produsul dorit">
+        </div>
 
         <label for="nume">Nume și Prenume:</label>
         <input type="text" id="nume" name="nume" required>
