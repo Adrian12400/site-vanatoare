@@ -124,16 +124,34 @@ document.querySelectorAll('.produs-card img').forEach(function(img) {
     });
 });
 
-// Formular de comandă
+// Funcționalitatea pentru a arăta câmpul "Alt produs"
+document.getElementById("produs").addEventListener("change", function() {
+    let altProdusContainer = document.getElementById("alt-produs-container");
+    if (this.value === "Altceva") {
+        altProdusContainer.style.display = "block";
+    } else {
+        altProdusContainer.style.display = "none";
+    }
+});
+
+// Formularul de comandă
 document.getElementById("formular-comanda").addEventListener("submit", function(event) {
     event.preventDefault();
 
     let produs = document.getElementById("produs").value;
+    let altProdus = document.getElementById("alt-produs").value.trim();
     let nume = document.getElementById("nume").value;
     let telefon = document.getElementById("telefon").value;
     let adresa = document.getElementById("adresa").value;
 
-    let mailtoLink = `mailto:officeechipamentvanatoare@gmail.com?subject=Comanda%20Noua&body=Produs: ${produs}%0D%0A Nume: ${nume}%0D%0A Telefon: ${telefon}%0D%0A Adresa: ${adresa}`;
+    // Construim mesajul pentru email
+    let body = `Produs: ${produs}%0D%0A Nume: ${nume}%0D%0A Telefon: ${telefon}%0D%0A Adresa: ${adresa}`;
+    
+    // Dacă utilizatorul a selectat "Altceva" și a completat un produs, îl adăugăm la email
+    if (produs === "Altceva" && altProdus !== "") {
+        body += `%0D%0A Alt produs dorit: ${altProdus}`;
+    }
 
+    let mailtoLink = `mailto:comenzi@magazin.com?subject=Comanda%20Noua&body=${body}`;
     window.location.href = mailtoLink;
 });
