@@ -133,7 +133,7 @@ document.getElementById("formular-comanda").addEventListener("submit", function(
     let telefon = document.getElementById("telefon").value;
     let adresa = document.getElementById("adresa").value;
 
-    let mailtoLink = `mailto:comenzi@magazin.com?subject=Comanda%20Noua&body=Produs: ${produs}%0D%0A Nume: ${nume}%0D%0A Telefon: ${telefon}%0D%0A Adresa: ${adresa}`;
+    let mailtoLink = `mailto:officeechipamentvanatoare@gmail.com?subject=Comanda%20Noua&body=Produs: ${produs}%0D%0A Nume: ${nume}%0D%0A Telefon: ${telefon}%0D%0A Adresa: ${adresa}`;
 
     window.location.href = mailtoLink;
 });
