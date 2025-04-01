@@ -103,30 +103,3 @@ footer {
     bottom: 0;
     margin-top: 20px;
 }
-
-/* Optimizări pentru mobil */
-@media (max-width: 768px) {
-    body {
-        background-attachment: fixed;
-        background-position: right center; /* Mută imaginea mai în dreapta pentru a se vedea omul */
-    }
-    
-    #hero {
-        height: auto;
-        padding: 30px;
-        max-width: 90%;
-    }
-    
-    #hero h2 {
-        font-size: 28px;
-    }
-    
-    #hero p {
-        font-size: 16px;
-    }
-    
-    button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-}
