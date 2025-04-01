@@ -13,23 +13,20 @@ document.querySelectorAll('.produs-card').forEach(function(produs) {
 
 // Funcție pentru a deschide detalii despre produs într-o fereastră pop-up
 function showProductDetails(productId) {
-    // Căutăm produsul în funcție de ID-ul lui
     const produsDetalii = {
         produs1: {
             titlu: "Husă Tactică Impermeabilă pentru Pușcă – 135 cm",
             descriere: `
-                Această husă tactică este ideală pentru transportul și protecția puștii tale, oferind siguranță și durabilitate în orice condiții. Cu o lungime de 135 cm, este potrivită pentru majoritatea modelelor de puști de vânătoare sau sport.
+                Această husă tactică este ideală pentru transportul și protecția puștii tale, oferind siguranță și durabilitate în orice condiții.
                 <br><br>
                 <strong>Caracteristici principale:</strong>
                 <ul>
                     <li><strong>Dimensiune optimă:</strong> Lungime de 135 cm, compatibilă cu diverse tipuri de puști.</li>
-                    <li><strong>Material rezistent și impermeabil:</strong> Fabricată din țesătură Oxford durabilă, protejează împotriva apei, prafului și uzurii.</li>
-                    <li><strong>Transport confortabil:</strong> Dotată cu mânere solide și o curea reglabilă, oferind mai multe opțiuni de purtare.</li>
-                    <li><strong>Protecție interioară:</strong> Căptușeală moale pentru prevenirea zgârieturilor și a deteriorării armei.</li>
-                    <li><strong>Compartimente suplimentare:</strong> Spațiu special pentru accesorii precum muniție sau echipamente necesare.</li>
+                    <li><strong>Material rezistent și impermeabil:</strong> Fabricată din țesătură Oxford durabilă.</li>
+                    <li><strong>Transport confortabil:</strong> Dotată cu mânere solide și o curea reglabilă.</li>
+                    <li><strong>Protecție interioară:</strong> Căptușeală moale pentru prevenirea zgârieturilor.</li>
+                    <li><strong>Compartimente suplimentare:</strong> Spațiu special pentru accesorii.</li>
                 </ul>
-                <br>
-                O husă robustă și practică, perfectă pentru vânători și pasionați de arme!
             `,
             imagini: ['produs1.jpg', 'produs1-detaliu.jpg']
         },
@@ -38,7 +35,6 @@ function showProductDetails(productId) {
             descriere: "Descriere detaliată pentru produsul 2.",
             imagini: ['produs2.jpg', 'produs2-detaliu.jpg']
         }
-        // Poți adăuga aici și alte produse
     };
 
     const produs = produsDetalii[productId];
@@ -124,7 +120,7 @@ document.querySelectorAll('.produs-card img').forEach(function(img) {
     });
 });
 
-// Funcționalitatea pentru a arăta câmpul "Alt produs"
+// Afișare câmp „Alt produs” când utilizatorul alege „Altceva”
 document.getElementById("produs").addEventListener("change", function() {
     let altProdusContainer = document.getElementById("alt-produs-container");
     if (this.value === "Altceva") {
@@ -134,7 +130,7 @@ document.getElementById("produs").addEventListener("change", function() {
     }
 });
 
-// Formularul de comandă
+// Formularul de comandă - Trimitere prin EmailJS
 document.getElementById("formular-comanda").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -144,14 +140,18 @@ document.getElementById("formular-comanda").addEventListener("submit", function(
     let telefon = document.getElementById("telefon").value;
     let adresa = document.getElementById("adresa").value;
 
-    // Construim mesajul pentru email
-    let body = `Produs: ${produs}%0D%0A Nume: ${nume}%0D%0A Telefon: ${telefon}%0D%0A Adresa: ${adresa}`;
-    
-    // Dacă utilizatorul a selectat "Altceva" și a completat un produs, îl adăugăm la email
-    if (produs === "Altceva" && altProdus !== "") {
-        body += `%0D%0A Alt produs dorit: ${altProdus}`;
-    }
+    let params = {
+        produs: produs === "Altceva" ? altProdus : produs,
+        nume: nume,
+        telefon: telefon,
+        adresa: adresa
+    };
 
-    let mailtoLink = `mailto:officeechipamentvanatoare@gmail.com?subject=Comanda%20Noua&body=${body}`;
-    window.location.href = mailtoLink;
+    emailjs.send("service_taulDemailjs", "template_taulDemailjs", params)
+        .then(function(response) {
+            alert("Comanda a fost trimisă cu succes!");
+            document.getElementById("formular-comanda").reset(); // Șterge formularul după trimitere
+        }, function(error) {
+            alert("Eroare la trimitere. Încearcă din nou.");
+        });
 });
