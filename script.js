@@ -152,6 +152,6 @@ document.getElementById("formular-comanda").addEventListener("submit", function(
         body += `%0D%0A Alt produs dorit: ${altProdus}`;
     }
 
-    let mailtoLink = `mailto:comenzi@magazin.com?subject=Comanda%20Noua&body=${body}`;
+    let mailtoLink = `mailto:officeechipamentvanatoare@gmail.com?subject=Comanda%20Noua&body=${body}`;
     window.location.href = mailtoLink;
 });
