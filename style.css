@@ -108,6 +108,8 @@ footer {
 @media (max-width: 768px) {
     body {
         background-attachment: scroll; /* Evită distorsiunile pe mobil */
+        background-size: contain; /* Asigură întreaga imagine pe ecran */
+        background-color: black; /* Fundal de rezervă */
     }
     
     #hero {
