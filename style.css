@@ -8,7 +8,7 @@
 /* Stilizare generală */
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('https://source.unsplash.com/1600x900/?hunting') no-repeat center center fixed;
+    background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     text-align: center;
